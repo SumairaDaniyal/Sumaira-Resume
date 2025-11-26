@@ -3,6 +3,7 @@ name: Deploy Resume
 on:
   push:
     branches: [ main ]
+  workflow_dispatch:
 
 jobs:
   deploy:
@@ -18,7 +19,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: .   # Upload entire project
 
       - name: Deploy to GitHub Pages
         id: deployment
